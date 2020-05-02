@@ -16,8 +16,8 @@ public class CurrencyConvertController {
 	private CurrencyConvertService currencyConvertService;
 	
 	@GetMapping("/conversion/{amount}/{fromCurrency}/{toCurrency}")
-	public void convertAmount(@PathVariable Integer amount , @PathVariable String fromCurrency , @PathVariable String toCurrency) {
-		currencyConvertService.calculateConvertAmount(amount, fromCurrency, toCurrency);
+	public String convertAmount(@PathVariable Integer amount , @PathVariable String fromCurrency , @PathVariable String toCurrency) {
+		return "Converted value : "+currencyConvertService.calculateConvertAmount(amount, fromCurrency, toCurrency);
 	}
 
 }
