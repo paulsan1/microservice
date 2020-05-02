@@ -37,13 +37,6 @@ public class ConversionFactor {
 		CONVERSIONFACTOR = cONVERSIONFACTOR;
 	}
 	
-	public ConversionFactor( String cURRENCY, String cOUNTRY, String cONVERSIONFACTOR) {
-		super();
-		CURRENCY = cURRENCY;
-		COUNTRY = cOUNTRY;
-		CONVERSIONFACTOR = cONVERSIONFACTOR;
-	}
-
 	public int getID() {
 		return ID;
 	}

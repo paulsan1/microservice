@@ -2,16 +2,26 @@ package com.ms.act.CurrencyConFactor.model;
 
 public class RequestConFactor {
 
+	private Integer ID ;
 	private String CURRENCY;
 	private String COUNTRY;
 	private String CONVERSIONFACTOR;
 
 	
-	public RequestConFactor( String cURRENCY, String cOUNTRY, String cONVERSIONFACTOR) {
+	public RequestConFactor(Integer iD , String cURRENCY, String cOUNTRY, String cONVERSIONFACTOR) {
 		super();
+		ID = iD ;
 		CURRENCY = cURRENCY;
 		COUNTRY = cOUNTRY;
 		CONVERSIONFACTOR = cONVERSIONFACTOR;
+	}
+
+	public Integer getID() {
+		return ID;
+	}
+
+	public void setID(Integer iD) {
+		ID = iD;
 	}
 
 	public String getCURRENCY() {

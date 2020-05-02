@@ -40,4 +40,9 @@ public class ConversionFactorService {
 		return conversionFactorRepository.findAll();
 	}
 	
+	public ConversionFactor getConversionFactorsByCurrency(String currency) {
+		System.out.println("incoming currency "+currency);
+		return conversionFactorRepository.getConversionFactorsByCurrency(currency);
+	}
+	
 }

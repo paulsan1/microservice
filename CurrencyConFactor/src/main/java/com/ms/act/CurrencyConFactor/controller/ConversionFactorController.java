@@ -37,6 +37,17 @@ public class ConversionFactorController {
 		return responseList;
 	}
 
+	@GetMapping(path = "/getByCurrency/{currency}")
+	public ResponseConFactor getConversionFactorByCurrency(@PathVariable String currency) {
+		ResponseConFactor responseConFactor = null;
+		ConversionFactor conversionFactor = conversionFactorService.getConversionFactorsByCurrency(currency);
+		if (conversionFactor != null) {
+			responseConFactor = new ResponseConFactor(conversionFactor.getID(), conversionFactor.getCURRENCY(),
+					conversionFactor.getCOUNTRY(), conversionFactor.getCONVERSIONFACTOR());
+		}
+		return responseConFactor;
+	}
+	
 	@PostMapping(path = "/defaultAdd")
 	public String addDefaultConversionFactor() {
 
@@ -49,13 +60,13 @@ public class ConversionFactorController {
 	@PostMapping(path = "/addFactor")
 	public void addConversionFactor(@RequestBody RequestConFactor reqConversionFactor) {
 
-		conversionFactorService.addConversionFactor(new ConversionFactor(reqConversionFactor.getCURRENCY(),
+		conversionFactorService.addConversionFactor(new ConversionFactor(reqConversionFactor.getID() ,reqConversionFactor.getCURRENCY(),
 				reqConversionFactor.getCOUNTRY(), reqConversionFactor.getCONVERSIONFACTOR()));
 	}
 
 	@PutMapping(path = "/updateFactor/{id}")
 	public void updateConversionFactor(@RequestBody RequestConFactor reqConversionFactor, @PathVariable Integer id) {
-		conversionFactorService.updateConversionFactor(new ConversionFactor(reqConversionFactor.getCURRENCY(),
+		conversionFactorService.updateConversionFactor(new ConversionFactor(reqConversionFactor.getID() ,reqConversionFactor.getCURRENCY(),
 				reqConversionFactor.getCOUNTRY(), reqConversionFactor.getCONVERSIONFACTOR()), id);
 	}
 
