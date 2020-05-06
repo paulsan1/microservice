@@ -1,3 +1,7 @@
 spring:
   application:
     name: currencyconvertms
+  cloud:
+    config:
+      uri: ${convertfactorms.configserverurl:http://localhost:8888}
+      fail-fast: false  

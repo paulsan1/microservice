@@ -1,0 +1,17 @@
+server:
+  port: 8888
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          #uri: C:\work\ksr\kolkata2020labsconfig
+          uri: https://github.com/paulsan1/microservice.git
+          username: paulsan1@in.ibm.com
+          password: P@ssw0rd@IBM
+          skipSslValidation: true          

@@ -10,14 +10,14 @@ management:
 spring:
   h2:
     console:
-      enabled: true
+      enabled: ${convertfactorms.h2.console.enabled}
       path: /h2
       settings:
         web-allow-others: true
   datasource:
-    url: "jdbc:h2:mem:conversionDB;DB_CLOSE_DELAY=-1"
-    username: test
-    password: 
+    url: ${convertfactorms.datasource.url}
+    username: ${convertfactorms.datasource.username}
+    password: ${convertfactorms.datasource.password}
     driver-class-name: org.h2.Driver
   jpa:
     properties:
