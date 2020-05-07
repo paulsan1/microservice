@@ -1,0 +1,24 @@
+Eureka
+http://localhost:8761/
+
+MS1 - conversionfactor
+
+jdbc:h2:mem:conversionDB;DB_CLOSE_DELAY=-1
+
+http://localhost:8081/conversionfactor/defaultAdd
+http://localhost:8081/conversionfactor/getAll
+http://localhost:8081/h2/
+
+http://localhost:8081/conversionfactor/addFactor - Post
+{"id":2,"country":"IND","currency":"INR","conversionfactor":"0.24"}
+{"id":3,"country":"GB","currency":"GBP","conversionfactor":"1.29"}
+
+http://localhost:8081/conversionfactor/updateFactor/2 - Put
+{"id":2,"country":"IND","currency":"INR","conversionfactor":"0.013"}
+
+
+http://localhost:8081/conversionfactor/getByCurrency/EUR
+
+MS2 - currency
+http://localhost:8082/currency/conversion03/100/GBP/INR
+
