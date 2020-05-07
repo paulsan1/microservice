@@ -7,6 +7,9 @@ public class RequestConFactor {
 	private String COUNTRY;
 	private String CONVERSIONFACTOR;
 
+	public RequestConFactor() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public RequestConFactor(Integer iD , String cURRENCY, String cOUNTRY, String cONVERSIONFACTOR) {
 		super();

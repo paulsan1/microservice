@@ -19,5 +19,21 @@ public class CurrencyConvertController {
 	public String convertAmount(@PathVariable Integer amount , @PathVariable String fromCurrency , @PathVariable String toCurrency) {
 		return "Converted value : "+currencyConvertService.calculateConvertAmount(amount, fromCurrency, toCurrency);
 	}
+	
+	@GetMapping("/conversion01/{amount}/{fromCurrency}/{toCurrency}")
+	public String convertAmountDiscovery(@PathVariable Integer amount , @PathVariable String fromCurrency , @PathVariable String toCurrency) {
+		return "Converted value : "+currencyConvertService.calculateConvertAmountDscvy(amount, fromCurrency, toCurrency);
+	}
+	
+	@GetMapping("/conversion02/{amount}/{fromCurrency}/{toCurrency}")
+	public String convertAmountLB(@PathVariable Integer amount , @PathVariable String fromCurrency , @PathVariable String toCurrency) {
+		return "Converted value : "+currencyConvertService.calculateConvertAmountLB(amount, fromCurrency, toCurrency);
+	}
+	
+
+	@GetMapping("/conversion03/{amount}/{fromCurrency}/{toCurrency}")
+	public String convertAmountLBCB(@PathVariable Integer amount , @PathVariable String fromCurrency , @PathVariable String toCurrency) {
+		return "Converted value : "+currencyConvertService.calculateConvertAmountLBCB(amount, fromCurrency, toCurrency);
+	}
 
 }
