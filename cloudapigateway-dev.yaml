@@ -2,7 +2,7 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: currencyconvertms
+      - id: currencyconvert
         uri: lb://currencyconvertms
         predicates:
         - Path=/currency/**
