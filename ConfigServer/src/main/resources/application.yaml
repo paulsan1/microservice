@@ -14,4 +14,11 @@ spring:
           uri: https://github.com/paulsan1/microservice.git
           username: paulsan1@in.ibm.com
           password: P@ssw0rd@IBM
-          skipSslValidation: true          
+          skipSslValidation: true  
+    bus:
+      enabled: true
+      destination: configXchangebus                   
+  rabbitmq:
+    host: 192.168.99.100
+    port: 5672
+       
