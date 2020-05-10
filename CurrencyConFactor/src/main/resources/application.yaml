@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 8081
 
 management:
   endpoints:
@@ -10,12 +10,12 @@ management:
 spring:
   h2:
     console:
-      enabled: ${convertfactorms.h2.console.enabled}
+      enabled: ${convertfactorms.h2.console.enabled:true}
       path: /h2
       settings:
         web-allow-others: true
   datasource:
-    url: ${convertfactorms.datasource.url}
+    url: "jdbc:h2:mem:conversionDB:DB_CLOSE_DELAY=-1"
     username: ${convertfactorms.datasource.username}
     password: ${convertfactorms.datasource.password}
     driver-class-name: org.h2.Driver
@@ -30,9 +30,9 @@ spring:
     sampler:
       probability: 1.0
   zipkin:
-    base-url: http://192.168.99.100:9411/
+    base-url: http://zipkin:9411/
   rabbitmq:
-    host: 192.168.99.100
+    host: rabbitmq-master
     port: 5672
   cloud:
     bus:
@@ -51,7 +51,7 @@ eureka:
     fetchRegistry: true
     prefer-same-zone-eureka: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${convertfactorms.eureka.url:http://eureka-1:8761/eureka}
  
       
         
